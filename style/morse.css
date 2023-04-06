@@ -1,0 +1,20 @@
+header{
+    background-color: aqua;
+}
+.phrase{
+    position: absolute;
+    margin: 50;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.morse{
+    position: center;
+    margin: 50;
+    height: 100 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
