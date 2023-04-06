@@ -1,6 +1,4 @@
-header{
-    background-color: aqua;
-}
+
 .phrase{
     position: absolute;
     margin: 50;
@@ -17,4 +15,67 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.bouton_valider{
+    position: absolute;
+    margin: 150;
+    height: 20px;
+}
+.bouton_décoder{
+    position: relative;
+    align-items: center
+    ;
+    margin: 175px;
+    height: 23px;
+}
+button {
+    background-color: transparent;
+    align-items: center;
+    font-size: 25px;
+    width: 8em;
+    height: 2em;
+    text-align: center;
+    line-height: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    position: relative;
+    transition: 0.5s;
+    margin: 0.8em;
+}
+
+button::before,
+button::after {
+    content: '';
+    position: absolute;
+    width: 0.6em;
+    height: 0.6em;
+    background-color: rgb(241, 119, 38);
+    border-radius: 50%;
+    transition: 0.5s cubic-bezier(0.5, -0.5, 0.25, 1.5);
+    top: calc(50% - 0.6em / 2);
+}
+
+button::before {left: 0; z-index: -1;}
+button::after {right: 0; z-index: -2;}
+
+button:hover {
+    color: rgb(255, 255, 255);
+}
+
+button:hover::before,
+button:hover::after {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background-color: rgb(245, 111, 1);
+}
+
+button:hover::before {
+    top: 0;
+}
+
+button:hover::after {
+    right: -0.4em;
+    filter: brightness(0.8);
 }
