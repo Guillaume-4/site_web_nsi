@@ -9,6 +9,8 @@ def coder(phrase):
                     v = " "
                 if phrase[i] == ele[0] and phrase[i]!= " ":
                     v = ele[1] + x
+                    if v > 26:
+                        v = v - 26
         for ele in dico_alpha.items():
             if v == ele[1]:
                 phrase_code.append(ele[0])
@@ -21,12 +23,15 @@ def coder(phrase):
 def decoder(phrase_terminer):
     phrase_deco = ""
     temp = []
+    w = 1000
     for i in range(len(phrase_terminer)):
         for ele in dico_alpha.items():
             if phrase_terminer[i] == " ":
                 w = " "
             if phrase_terminer[i] == ele[0] and phrase_terminer[i] != " ":
                 w = ele[1] - x
+            if w == 0 :
+                w = w + 26
         for ele in dico_alpha.items():
             if w == ele[1]:
                 temp.append(ele[0])
@@ -37,8 +42,7 @@ def decoder(phrase_terminer):
 
 
 x = int(input("chiffre"))
-phrase = 'ceci est un message'
+phrase = 'j aime mangez'
 phrase2 = coder(phrase)
 print(coder(phrase))
 print(decoder(phrase2))
-
