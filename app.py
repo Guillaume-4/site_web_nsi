@@ -9,4 +9,12 @@ def index():
 @app.route('/morse')
 def autre_page():
     return render_template("/morse/morse.html")
+
+
+@app.route('/cesar')
+def cesar():
+    return render_template("/cesar/cesar.html")
+
+
+
 app.run(debug=True)
