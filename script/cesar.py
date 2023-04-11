@@ -5,17 +5,8 @@ def coder(phrase, nb):
     phrase_code = []
     for i in range(len(phrase)):
         for ele in dico_alpha.items():
-<<<<<<< HEAD
             if phrase[i] == ele[0]:
                 v = ele[1] + nb
-=======
-                if phrase[i] == " " :
-                    v = " "
-                if phrase[i] == ele[0] and phrase[i]!= " ":
-                    v = ele[1] + x
-                    if v > 26:
-                        v = v - 26
->>>>>>> ca0dcdd55395ed8bbbad4295d4c21e0784b3c546
         for ele in dico_alpha.items():
             if v == ele[1]:
                 phrase_code.append(ele[0])
@@ -47,13 +38,6 @@ def decoder(phrase_terminer):
 
 
 x = int(input("chiffre"))
-<<<<<<< HEAD
 phrase = 'ceci'
 print(coder(phrase, x))
 
-=======
-phrase = 'j aime mangez'
-phrase2 = coder(phrase)
-print(coder(phrase))
-print(decoder(phrase2))
->>>>>>> ca0dcdd55395ed8bbbad4295d4c21e0784b3c546
