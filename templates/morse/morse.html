@@ -9,11 +9,16 @@
 
 <body>
     <div>
-        <textarea name="A coder" id="phrase_a_coder" cols="50" rows="5" class="phrase"></textarea>
-
-        <input type="submit" value="Coder" class="bouton_valider" href="python:encore();">
         
-        <input type="submit" value="Décoder" class="bouton_décoder">
+        <form method="POST" class="coder" >
+            <div class="form_code"><label>Phrase à coder: <input type="text" name="a_coder"></label></div>
+            <input type="submit" value="Coder" class="bouton_valider">
+        </form> 
+        <form method="POST" class="decoder" >
+            <div class="form_decode"><label>Phrase à décoder: <input type="text" name="a_decoder"></label></div>
+            <input type="submit" value="Décoder" class="bouton_décoder">
+        </form>
+
     </div>
 </body>
 </html>

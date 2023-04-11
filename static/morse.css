@@ -18,17 +18,33 @@
 }
 
 .bouton_valider{
-    position: absolute;
-    margin: 150;
+    position: relative;
+    align-items: center;
     height: 20px;
+    margin-left: 10%;
 }
 .bouton_décoder{
     position: relative;
-    align-items: center
-    ;
-    margin: 175px;
-    height: 23px;
+    align-items: center;
+    height: 20px;
+    margin-left:50%;
 }
+
+.form_code{
+    position: relative;
+    align-items: center;
+    height: 20px;
+    margin-left: 10%;
+}
+
+
+.form_decode{
+    position: relative;
+    align-items: center;
+    height: 20px;
+    margin-left:50%;
+}
+
 button {
     background-color: transparent;
     align-items: center;
