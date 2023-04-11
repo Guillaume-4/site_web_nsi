@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../style/morse.css">
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 <html>
 <header>
     <head>
@@ -10,7 +11,14 @@
 <body>
     <div>
         <textarea name="A coder" id="phrase_a_coder" cols="50" rows="5" class="phrase"></textarea>
-        <input type="submit" value="Coder" class="bouton_valider">
+        <py-script>
+            import ../script/morse.py
+            e = encode(textarea)
+            print(e)
+        </py-script>
+
+        <input type="submit" value="Coder" class="bouton_valider" href="python:encore();">
+        
         <input type="submit" value="Décoder" class="bouton_décoder">
     </div>
 </body>
