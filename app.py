@@ -49,6 +49,8 @@ def pigpen():
     return render_template("pigpen/pigpen.html")
 
 
+
+
 phrase_a_decoder = None
 phrase_a_coder = None
 app.run(debug=True)
