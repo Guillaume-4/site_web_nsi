@@ -1,6 +1,22 @@
-<link rel="stylesheet" href="../style/cesar.css">
+<link rel="stylesheet" href="../../static/cesar.css">
 <header>
     <head>
         <button onclick=window.location.href="../">Accueil</button>
     </head>
 </header>
+
+<body>
+    <div>
+        
+        <form method="POST" class="coder" >
+            <div class="form_code"><label>Phrase à coder: <input type="text" name="cesar_code"></label></div>
+            <input type="submit" value="Coder" class="bouton_valider">
+            
+        </form> 
+        <form method="POST" class="decoder" >
+            <div class="form_decode"><label>Phrase à décoder: <input type="text" name="cesar_decode"></label></div>
+            <input type="submit" value="Décoder" class="bouton_décoder">
+        </form>
+
+    </div>
+</body>
