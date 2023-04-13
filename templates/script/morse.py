@@ -6,13 +6,13 @@ def morse_encode(phrase):
         i = i.upper()
         for key, value in morse.items():
             if key == i:
-                phrase_morse = phrase_morse + value + ";;"
+                phrase_morse = phrase_morse + value + "/"
     return phrase_morse
 
 
 def morse_decode(phrase_morse):
     phrase = ""
-    ph_morse_split = phrase_morse.split(";;")
+    ph_morse_split = phrase_morse.split("/")
     for i in ph_morse_split:
         for key, value in morse.items():
             if value == i:

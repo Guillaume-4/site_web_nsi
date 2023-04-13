@@ -1,49 +1,40 @@
 
-.phrase{
+.coder{
     position: absolute;
-    margin: 50;
+    margin-left: 15%;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -10%;
 }
 
-.morse{
-    position: center;
-    margin: 50;
-    height: 100 ;
+.decoder{
+    position: absolute;
+    margin-left: 50%;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -10%;
 }
 
 .bouton_valider{
-    position: relative;
+    position: absolute;
     align-items: center;
-    height: 20px;
-    margin-left: 10%;
+    margin-top: 55px;
+    margin-right: 15;
+
 }
 .bouton_décoder{
-    position: relative;
+    position: absolute;
     align-items: center;
-    height: 20px;
-    margin-left:50%;
-}
+    margin-top: 55px;
+    margin-left: 12px;
 
-.form_code{
-    position: relative;
-    align-items: center;
-    height: 20px;
-    margin-left: 10%;
 }
 
 
-.form_decode{
-    position: relative;
-    align-items: center;
-    height: 20px;
-    margin-left:50%;
-}
 
 button {
     background-color: transparent;
@@ -66,7 +57,7 @@ button::after {
     position: absolute;
     width: 0.6em;
     height: 0.6em;
-    background-color: rgb(241, 119, 38);
+    background-color: #000000;
     border-radius: 50%;
     transition: 0.5s cubic-bezier(0.5, -0.5, 0.25, 1.5);
     top: calc(50% - 0.6em / 2);
@@ -84,7 +75,7 @@ button:hover::after {
     width: 100%;
     height: 100%;
     border-radius: 0;
-    background-color: rgb(245, 111, 1);
+    background-color: #242424;
 }
 
 button:hover::before {
@@ -95,3 +86,120 @@ button:hover::after {
     right: -0.4em;
     filter: brightness(0.8);
 }
+
+
+header {
+    background-color: #6b7280;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+header nav {
+    margin-left: 40px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+
+}
+
+.Titre-morse{
+    margin-left: 30%;
+    width: 100%;
+    font-size: 1.8em;
+
+}
+
+body{
+    background-color: #6b7280;
+    color: #9ca3af;
+}
+
+.accueil{
+    width: 60%;
+}
+
+.reponse{
+    position: fixed;
+    left: 10%;
+    margin-top: 5%;
+    height: 10px;
+    font-size: 1.3em;
+}
+
+.texte-morse{
+    padding: 10%;
+    text-align: center;
+    height: 20%;
+    font-size: 1.6em;
+}
+
+a {
+    text-decoration:none;
+    color:#FFF;
+}
+.bouton_valider {
+width:calc(20vw + 6px);
+height:calc(8vw + 6px);
+background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+border-radius:5px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-transform:uppercase;
+font-weight:bold;
+height: 20%;
+}
+.bouton_valider:after {
+content:attr(alt);
+
+background-color:#191919;
+display:flex;
+align-items:center;
+justify-content:center;
+height: 20%;
+}
+.bouton_valider:hover {
+animation:slidebg 2s linear infinite;
+height: 20%;
+}
+
+@keyframes slidebg {
+to {
+    background-position:20vw;
+}
+}
+.bouton_décoder {
+    width:calc(20vw + 6px);
+    height:calc(8vw + 6px);
+    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+    border-radius:5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-transform:uppercase;
+    font-weight:bold;
+    height: 20%;
+    }
+    .bouton_décoder:after {
+    content:attr(alt);
+    
+    background-color:#191919;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height: 20%;
+    }
+    .bouton_décoder:hover {
+    animation:slidebg 2s linear infinite;
+    height: 20%;
+    }
+    
+    @keyframes slidebg {
+    to {
+        background-position:20vw;
+    }
+    }
