@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from templates.script.morse import morse_encode, morse_decode
 from templates.script.cesar import cesar_coder, cesar_decoder
+from templates.script.pigpen import pigpen_encode, pigpen_decode
 
 app = Flask(__name__)
 
@@ -44,9 +45,22 @@ def cesar():
     else:
         return render_template("/cesar/cesar.html")
 
-@app.route("/pigpen")
+@app.route('/pigpen', methods=['GET', 'POST']    )
 def pigpen():
-    return render_template("pigpen/pigpen.html")
+    phrase_a_coder = request.form.get("a_coder")
+    phrase_a_decoder = request.form.get("a_decoder")
+    if phrase_a_coder == None and phrase_a_decoder != None:
+        print(phrase_a_decoder)
+        decoder = pigpen_decode(phrase_a_decoder)
+        print(decoder)
+        return render_template("/pigpen/pigpen.html") + f"<h1>La Phrase décoder est: {decoder}</h1> "
+    elif phrase_a_coder != None and phrase_a_decoder == None:
+        print(phrase_a_coder)
+        coder = pigpen_encode(phrase_a_coder)
+        print(coder)
+        return render_template("/pigpen/pigpen.html") + f"<h1>La Phrase coder est: {coder}</h1> "
+    else:
+        return render_template("/pigpen/pigpen.html")
 
 
 
