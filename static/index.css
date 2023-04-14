@@ -27,7 +27,7 @@ ul {
     margin-right: auto;
     margin-left: auto;
     margin-top: 5%;
-    text-shadow:0 0 20px #ffffff,2px 3px 3px #141414, 0 0 100px #8b8a88;color:#8b8a88;
+    text-shadow:0 0 20px #ffffff,2px 3px 3px #070707, 0 0 100px #070707;color:#070707;
     background-color:#2d2c2c;
     margin-bottom: 10%;   
 
@@ -310,4 +310,78 @@ ul {
   .nav ul li a{
     font-size: 8vh;
   }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.action {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+.action span {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #383232;
+  font-size: 2em;
+  transition: .3s ease-in-out;
+}
+.action.active span  {
+  transform: rotate(135deg);
+}
+
+.action ul {
+  position: absolute;
+  bottom: 55px;
+  background: #fff;
+  min-width: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+.action.active ul {
+  bottom: 65px;
+  opacity: 1;
+  visibility: visible;
+  transition: .3s;
+}
+.action ul li {
+  list-style:none;
+   text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7px 0;
+}
+
+.action ul li:hover {
+  font-weight: 600;
+}
+.action ul li:not(:last-child) {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.action ul li img {
+  margin-right: 15px;
+  opacity: .2;
+  transform: scale(.7);
+}
+.action ul li:hover img {  
+  opacity: .8;
+  transform: scale(1.0);
 }

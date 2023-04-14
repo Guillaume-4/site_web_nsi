@@ -125,7 +125,7 @@ body{
 .reponse{
     position: fixed;
     left: 10%;
-    margin-top: 5%;
+    margin-top: -275px;
     height: 10px;
     font-size: 1.3em;
 }
@@ -203,3 +203,24 @@ to {
         background-position:20vw;
     }
     }
+
+.tftable {
+    font-size:12px;color:#333333;
+    width:60%;
+    border-width: 1px;
+    border-color: #242424;
+    border-collapse: collapse;
+    margin-left: 15%;
+}
+
+.tftable tr {
+    background-color:#6b7280;
+}
+.tftable td {
+    font-size:24px;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #000000;
+    text-align: center;
+}
