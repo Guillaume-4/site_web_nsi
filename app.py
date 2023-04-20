@@ -28,7 +28,7 @@ def autre_page():
     
 
 
-@app.route('/cesar', methods=['GET', 'POST']    )
+@app.route('/cesar', methods=['GET', 'POST'])
 def cesar():
     phrase_a_coder = request.form.get("cesar_code")
     phrase_a_decoder = request.form.get("cesar_decode")
@@ -45,7 +45,7 @@ def cesar():
     else:
         return render_template("/cesar/cesar.html")
 
-@app.route('/pigpen', methods=['GET', 'POST']    )
+@app.route('/pigpen', methods=['GET', 'POST'])
 def pigpen():
     phrase_a_coder = request.form.get("a_coder")
     phrase_a_decoder = request.form.get("a_decoder")
