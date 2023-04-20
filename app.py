@@ -10,7 +10,7 @@ def index():
     return render_template("index.html")
 
 @app.route('/morse', methods=['GET', 'POST'])
-def autre_page():
+def morse():
     phrase_a_coder = request.form.get("a_coder")
     phrase_a_decoder = request.form.get("a_decoder")
     if phrase_a_coder == None and phrase_a_decoder != None:
@@ -67,4 +67,4 @@ def pigpen():
 
 phrase_a_decoder = None
 phrase_a_coder = None
-app.run(host="0.0.0.0")
+app.run() 

@@ -1,13 +1,17 @@
 <link rel="stylesheet" href="../../static/cesar.css">
 <header>
     <head>
-        <button onclick=window.location.href="../">Accueil</button>
+        <nav>
+            <button onclick=window.location.href="../" class="accueil">Accueil</button>
+            <h1 class="Titre-cesar"><b>CODEXIA: CESAR</b></h1>
+        </nav>
+        
     </head>
 </header>
 
 <body>
     <div>
-        
+        <h1 class="texte-cesar">La méthode de codage César est une technique de cryptage qui a été utilisée pendant des siècles pour protéger les communications confidentielles. Elle est nommée d'après Jules César, qui l'a utilisée pour protéger les messages militaires. <br>Le codage César fonctionne en décalant chaque lettre du message original d'un certain nombre de positions dans l'alphabet. Par exemple, si le décalage est de 3 positions, la lettre A deviendrait D, la lettre B deviendrait E, etc.. Le destinataire du message peut alors déchiffrer le message en effectuant le décalage inverse.</h1>
         <form method="POST" class="coder" >
             <div class="form_code"><label>Phrase à coder: <input type="text" name="cesar_code"></label></div>
             <input type="submit" value="Coder" class="bouton_valider">
