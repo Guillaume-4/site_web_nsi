@@ -123,9 +123,9 @@ body{
 }
 
 .reponse{
-    position: fixed;
+    position: absolute;
     left: 10%;
-    margin-top: -275px;
+    margin-top: -265px;
     height: 10px;
     font-size: 1.3em;
 }
@@ -205,6 +205,7 @@ to {
     }
 
 .tftable {
+    margin-top: 2%;
     font-size:12px;
     color:#333333;
     width:60%;

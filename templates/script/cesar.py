@@ -1,6 +1,7 @@
 dico_alpha = {'a': 1,'b': 2,'c': 3,'d': 4,'e': 5,'f': 6,'g': 7,'h': 8,'i': 9,'j': 10,'k': 11,'l': 12,'m': 13,'n': 14, 'o': 15,'p': 16,'q':17,'r': 18,'s': 19,'t': 20,'u': 21,'v': 22,'w': 23,'x': 24,'y': 25,'z': 26, ' ': " "}
 
-def cesar_coder(phrase):
+def cesar_coder(phrase, x):
+    x = int(x)
     phrase_terminer = ""
     phrase_code = []
     for i in range(len(phrase)):
@@ -20,7 +21,8 @@ def cesar_coder(phrase):
 
     return phrase_terminer
 
-def cesar_decoder(phrase_terminer):
+def cesar_decoder(phrase_terminer, x):
+    x = int(x)
     phrase_deco = ""
     temp = []
     w = 1000
@@ -28,10 +30,15 @@ def cesar_decoder(phrase_terminer):
         for ele in dico_alpha.items():
             if phrase_terminer[i] == " ":
                 w = " "
-            elif phrase_terminer[i] == ele[0] and phrase_terminer[i] != " ":
-                w = ele[1] - x
             elif w == 0 :
-                w = w + 26
+                w = 26
+            elif phrase_terminer[i] == ele[0] and phrase_terminer[i] != " ":
+                if ele[1] - x < 0:
+                    w = ele[1] + 26
+                    w = w - x
+                else:
+                    w = ele[1] - x
+            
         for ele in dico_alpha.items():
             if w == ele[1]:
                 temp.append(ele[0])
@@ -40,5 +47,3 @@ def cesar_decoder(phrase_terminer):
     return phrase_deco
 
 
-
-x = 3

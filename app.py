@@ -32,14 +32,17 @@ def morse():
 def cesar():
     phrase_a_coder = request.form.get("cesar_code")
     phrase_a_decoder = request.form.get("cesar_decode")
+    
     if phrase_a_coder == None and phrase_a_decoder != None:
+        nombre = request.form.get("Nb_Code")
         print(phrase_a_decoder)
-        decoder = cesar_decoder(phrase_a_decoder)
+        decoder = cesar_decoder(phrase_a_decoder, nombre)
         print(decoder)
         return render_template("/cesar/cesar.html") + f"<h1>La Phrase décoder est: {decoder}</h1> "
     elif phrase_a_coder != None and phrase_a_decoder == None:
+        nombre = request.form.get("Nb_Code")
         print(phrase_a_coder)
-        coder = cesar_coder(phrase_a_coder)
+        coder = cesar_coder(phrase_a_coder, nombre)
         print(coder)
         return render_template("/cesar/cesar.html") + f"<h1>La Phrase coder est: {coder}</h1> "
     else:
@@ -67,4 +70,4 @@ def pigpen():
 
 phrase_a_decoder = None
 phrase_a_coder = None
-app.run() 
+app.run(debug=True) 
