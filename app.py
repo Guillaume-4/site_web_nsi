@@ -17,7 +17,7 @@ def morse():
         print(phrase_a_decoder)
         decoder = morse_decode(phrase_a_decoder)
         print(decoder)
-        return render_template("/morse/morse.html") + f'<h1 class="reponse">La Phrase décoder est: {decoder}</h1>'
+        return render_template("/morse/morse.html") + f'<h1 class="reponse">La Phrase décodée est: {decoder}</h1>'
     elif phrase_a_coder != None and phrase_a_decoder == None:
         print(phrase_a_coder)
         coder = morse_encode(phrase_a_coder)
@@ -38,7 +38,7 @@ def cesar():
         print(phrase_a_decoder)
         decoder = cesar_decoder(phrase_a_decoder, nombre)
         print(decoder)
-        return render_template("/cesar/cesar.html") + f"<h1>La Phrase décoder est: {decoder}</h1> "
+        return render_template("/cesar/cesar.html") + f"<h1>La Phrase décodée est: {decoder}</h1> "
     elif phrase_a_coder != None and phrase_a_decoder == None:
         nombre = request.form.get("Nb_Code")
         print(phrase_a_coder)
@@ -56,7 +56,7 @@ def pigpen():
         print(phrase_a_decoder)
         decoder = pigpen_decode(phrase_a_decoder)
         print(decoder)
-        return render_template("/pigpen/pigpen.html") + f"<h1>La Phrase décoder est: {decoder}</h1> "
+        return render_template("/pigpen/pigpen.html") + f"<h1>La Phrase décodée est: {decoder}</h1> "
     elif phrase_a_coder != None and phrase_a_decoder == None:
         print(phrase_a_coder)
         coder = pigpen_encode(phrase_a_coder)
