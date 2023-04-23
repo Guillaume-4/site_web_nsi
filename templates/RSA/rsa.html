@@ -1,6 +1,29 @@
-<link rel="stylesheet" href="../style/huffman.css">
+<link rel="stylesheet" href="../style/rsa.css">
 <header>
     <head>
-        <button onclick=window.location.href="../index.html">Accueil</button>
+        <div>
+            <nav class="nav-rsa">
+                <button onclick=window.location.href="../index.html">Accueil</button>
+                <h1 class="titre-rsa">Codexia: RSA</h1>
+            </nav>
+        </div>
     </head>
 </header>
+<body>
+    <div class="presentation">
+        <h1>
+            Bienvenue sur le système de codage RSA. <br>En quoi consiste t-il ? En ça: (insérer image)
+        </h1>
+    </div>
+    <div>
+        <form method="POST" class="code_rsa" >
+            <div class="form_code"><label>Phrase à coder: <input type="text" name="a_coder"></label></div>
+            <input type="submit" value="Coder" class="bouton_valider">
+            
+        </form> 
+        <form method="POST" class="decode_rsa" >
+            <div class="form_decode"><label>Phrase à décoder: <input type="text" name="a_decoder"></label></div>
+            <input type="submit" value="Décoder" class="bouton_décoder">
+        </form>
+    </div>
+</body>
