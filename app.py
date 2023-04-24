@@ -64,6 +64,23 @@ def pigpen():
         return render_template("/pigpen/pigpen.html") + f"<h1>La Phrase coder est: {coder}</h1> "
     else:
         return render_template("/pigpen/pigpen.html")
+    
+@app.route('/rsa', methods=['GET', 'POST'])
+def rsa():
+    phrase_a_coder = request.form.get("a_coder")
+    phrase_a_decoder = request.form.get("a_decoder")
+    if phrase_a_coder == None and phrase_a_decoder != None:
+        print(phrase_a_decoder)
+        decoder = cesar_decoder(phrase_a_decoder)
+        print(decoder)
+        return render_template("/rsa/rsa.html") + f"<h1>La Phrase décodée est: {decoder}</h1> "
+    elif phrase_a_coder != None and phrase_a_decoder == None:
+        print(phrase_a_coder)
+        coder = cesar_coder(phrase_a_coder)
+        print(coder)
+        return render_template("/rsa/rsa.html") + f"<h1>La Phrase coder est: {coder}</h1> "
+    else:
+        return render_template("/rsa/rsa.html")
 
 
 
