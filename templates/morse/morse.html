@@ -1,37 +1,41 @@
-<link rel="stylesheet" href="../../static/morse.css">
 <html>
-<header>
-    <head>
-        <nav>
-            <button onclick=window.location.href="../" class="accueil">Accueil</button>
-            <h1 class="Titre-morse"><b>CODEXIA: MORSE</b></h1>
-        </nav>
-        
-    </head>
-</header>
+<link rel="stylesheet" href="../../static/morse.css">
 
 <body>
-    <div>
-        <h1 class="texte-morse">Le code Morse est un système de communication inventé par Samuel Morse et Alfred Vail au milieu du XIXe siècle. C'est un code qui utilise des signaux sonores ou lumineux pour transmettre des messages en utilisant des séquences de points et de tirets pour représenter des lettres, des chiffres et des symboles.</h1>
-        <form method="POST" class="coder" >
-            <div class="form_code"><label>Phrase à coder: <input type="text" name="a_coder"></label></div>
-            <input type="submit" value="Coder" class="bouton_valider">
-            
-        </form> 
-        <form method="POST" class="decoder" >
-            <div class="form_decode"><label>Phrase à décoder: <input type="text" name="a_decoder"></label></div>
-            <input type="submit" value="Décoder" class="bouton_décoder">
-        </form>
+         
+        <header>
+            <head>
+                <nav>
+                    <button onclick=window.location.href="../" class="accueil">Accueil</button>
+                    <h1 class="Titre-morse"><b>CODEXIA: MORSE</b></h1>
+                </nav>
+                
+            </head>
+        </header>
+    
+    
+    
+        <div>
+            <h1 class="texte-morse">Le code Morse est un système de communication inventé par Samuel Morse et Alfred Vail au milieu du XIXe siècle. C'est un code qui utilise des signaux sonores ou lumineux pour transmettre des messages en utilisant des séquences de points et de tirets pour représenter des lettres, des chiffres et des symboles.</h1>
+            <form method="POST" class="coder" >
+                <div class="form_code"><label>Phrase à coder: <input type="text" name="a_coder"></label></div>
+                <input type="submit" value="Coder" class="bouton_valider">
+                
+            </form> 
+            <form method="POST" class="decoder" >
+                <div class="form_decode"><label>Phrase à décoder: <input type="text" name="a_decoder"></label></div>
+                <input type="submit" value="Décoder" class="bouton_décoder">
+            </form>
 
-    </div>
+        </div>
 
-<table class="tftable" border="1">
-<tr><td>A: .-</td><td>B: -...</td><td>C: -.-.</td><td>D: -..</td><td>E: .</td><td>F: ..-.</td></tr>
-<tr><td>G: --</td><td>H: ....</td><td>I: ..</td><td>J: .---</td><td>K: -.-</td><td>L: .-..</td></tr>
-<tr><td>M: --</td><td>N: -.</td><td>O: ---</td><td>P: .--</td><td>Q: --.-</td><td>R: .-.</td></tr>
-<tr><td>S: ...</td><td>T: -</td><td>U: ..-</td><td>V: ...-</td><td>W: .--</td><td>X: -..-</td></tr>
-<tr><td>Y: -.--</td><td>Z: --..</td></tr>
-</table>
+        <table class="tftable" border="1">
+        <tr><td>A: .-</td><td>B: -...</td><td>C: -.-.</td><td>D: -..</td><td>E: .</td><td>F: ..-.</td></tr>
+        <tr><td>G: --</td><td>H: ....</td><td>I: ..</td><td>J: .---</td><td>K: -.-</td><td>L: .-..</td></tr>
+        <tr><td>M: --</td><td>N: -.</td><td>O: ---</td><td>P: .--</td><td>Q: --.-</td><td>R: .-.</td></tr>
+        <tr><td>S: ...</td><td>T: -</td><td>U: ..-</td><td>V: ...-</td><td>W: .--</td><td>X: -..-</td></tr>
+        <tr><td>Y: -.--</td><td>Z: --..</td></tr>
+        </table>
 
 
 
