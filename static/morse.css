@@ -93,7 +93,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 3s ease-in-out forwards;
 }
 header nav {
     margin-left: 40px;
@@ -108,11 +110,14 @@ header nav {
     width: 100%;
     font-size: 2.2em;
     color: white;
+    position: fixed;
 }
 
 body{
     color:#ffffff;
-
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 3s ease-in-out forwards;
 }
 body::before {
     content: '';
@@ -130,7 +135,7 @@ body::before {
   }
 
 .accueil{
-    width: 60%;
+    width: 25%;
     color: rgb(156, 156, 156);
 }
 
@@ -253,3 +258,13 @@ to {
     height: auto;
     opacity: 0.6;
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+    }

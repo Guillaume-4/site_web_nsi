@@ -89,14 +89,16 @@ button:hover::after {
 
 
 header {
-    background-color: #6b7280;
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     width: 100%;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 3s ease-in-out forwards;
 }
 header nav {
     margin-left: 40px;
@@ -110,16 +112,33 @@ header nav {
     margin-left: 30%;
     width: 100%;
     font-size: 2em;
+    position: fixed;
 
 }
 
 body{
-    background-color: #6b7280;
-    color:#333333;
+    color:#ffffff;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 3s ease-in-out forwards;
 }
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/mur-texture-gris.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.8;
+    z-index: -1;
+  }
 
 .accueil{
-    width: 60%;
+    width: 25%;
 }
 
 .reponse{
@@ -233,3 +252,13 @@ to {
 .label_nb{
     margin-left: 20px;
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+    }

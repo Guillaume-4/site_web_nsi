@@ -18,7 +18,7 @@ def pigpen_encode(phrase):
 def pigpen_decode(code):
     liste_temp = []
     decode = ""
-    ph_code_split = phrase_code.split("/")
+    ph_code_split = code.split("/")
     for i in ph_code_split:
         for ele in dico_carac.items():
             if i == ele[1]:
