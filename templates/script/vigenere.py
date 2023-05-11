@@ -1,4 +1,4 @@
-dico =  {'a': 1,'b': 2,'c': 3,'d': 4,'e': 5,'f': 6,'g': 7,'h': 8,'i': 9,'j': 10,'k': 11,'l': 12,'m': 13,'n': 14, 'o': 15,'p': 16,'q':17,'r': 18,'s': 19,'t': 20,'u': 21,'v': 22,'w': 23,'x': 24,'y': 25,'z': 26}
+dico =  {'a': 0,'b': 1,'c': 2,'d': 3,'e': 4,'f': 5,'g': 6,'h': 7,'i': 8,'j': 9,'k': 10,'l': 11,'m': 12,'n': 13, 'o': 14,'p': 15,'q':16,'r': 17,'s': 18,'t': 19,'u': 20,'v': 21,'w': 22,'x': 23,'y': 24,'z': 25}
 tab = [['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
        ['b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','a'],
        ['c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','a','b'],
@@ -57,9 +57,34 @@ def vigenere_encode(phrase):
                 carac.append(tab[val][val_cle])
     for g  in carac:
         code = code + g
-    print(carac)
     return code
 
-phrase = "test si c bon"
+def boom(code):
+    phrase_deco = ""
+    tab_fin = []
+    ph_decode = []
+    x = 0
+    cle = list(cle_code)
+    split_code = list(code)
+    for y in split_code: 
+        for j in range(len(tab)):
+            if x >= len(cle):
+                x = 0
+            if tab[x][j] == y:
+                tab_fin.append(j)
+            x += 1
+    for y in split_code:
+        for ele in dico.items():
+            if j == ele[1]:
+                ph_decode.append(ele[0])
+    for p in ph_code :
+        phrase_deco = phrase_deco + p
+    return phrase_deco
+
+
+
+phrase = "test si c bon et ouais ma guele"
 cle_code = 'vroum'
+ph_code = vigenere_encode(phrase)
 print(vigenere_encode(phrase))
+print(boom(ph_code))
