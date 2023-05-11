@@ -60,26 +60,35 @@ def vigenere_encode(phrase):
     return code
 
 def boom(code):
-    phrase_deco = ""
-    tab_fin = []
-    ph_decode = []
-    x = 0
-    cle = list(cle_code)
-    split_code = list(code)
-    for y in split_code: 
-        for j in range(len(tab)):
-            if x >= len(cle):
-                x = 0
-            if tab[x][j] == y:
-                tab_fin.append(j)
-            x += 1
-    for y in split_code:
-        for ele in dico.items():
-            if j == ele[1]:
-                ph_decode.append(ele[0])
-    for p in ph_code :
-        phrase_deco = phrase_deco + p
-    return phrase_deco
+    # Convertir le texte chiffré et la clé en majuscules
+    code = code.upper()
+    cle_code = cle_code.upper()
+
+    # Créer une liste de nombres correspondant aux lettres de la clé
+    cle_code_num = [ord(i) - 65 for i in cle_code]
+
+    # Définir une chaîne de caractères vide pour stocker le texte déchiffré
+    plaintext = ""
+
+    # Parcourir chaque caractère du texte chiffré
+    for i in range(len(code)):
+        # Si le caractère est une lettre
+        if code[i].isalpha():
+            # Calculer le nombre correspondant à la lettre du texte chiffré
+            letter_num = ord(code[i]) - 65
+            # Calculer le nombre correspondant à la lettre de la clé
+            cle_code_letter_num = cle_code_num[i % len(cle_code)]
+            # Déchiffrer la lettre en ajoutant les deux nombres et en prenant le modulo 26
+            plain_letter_num = (letter_num - cle_code_letter_num) % 26
+            # Convertir le nombre en lettre majuscule et l'ajouter à la chaîne de caractères déchiffrée
+            plain_letter = chr(plain_letter_num + 65)
+            plaintext += plain_letter
+        # Si le caractère n'est pas une lettre, l'ajouter directement à la chaîne de caractères déchiffrée
+        else:
+            plaintext += code[i]
+
+    # Retourner la chaîne de caractères déchiffrée
+    return plaintext
 
 
 
