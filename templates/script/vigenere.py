@@ -59,27 +59,32 @@ def vigenere_encode(phrase):
         code = code + g
     return code
 
-def boom(message_chiffre, cle):
-    message_dechiffre = ""
-    i = 0
-    for lettre in message_chiffre:
-        # Si la lettre n'est pas une lettre de l'alphabet, on la laisse inchangée
-        if lettre not in dico:
-            message_dechiffre += lettre
-            continue
-        # On décale la lettre de la clé correspondante
-        decalage = dico[cle[i % len(cle)]]
-        lettre_dechiffre = tab[dico[lettre]][decalage]
-        # On ajoute la lettre déchiffrée au message déchiffré
-        
-        message_dechiffre += lettre_dechiffre
-        i += 1
-    return message_dechiffre
+def boom(code):
+    phrase_deco = ""
+    tab_fin = []
+    ph_decode = []
+    x = 0
+    cle = list(cle_code)
+    split_code = list(code)
+    for y in split_code: 
+        for j in range(len(tab)):
+            if x >= len(cle):
+                x = 0
+            if tab[x][j] == y:
+                tab_fin.append(j)
+            x += 1
+    for y in split_code:
+        for ele in dico.items():
+            if j == ele[1]:
+                ph_decode.append(ele[0])
+    for p in ph_code :
+        phrase_deco = phrase_deco + p
+    return phrase_deco
 
 
 
 phrase = "test si c bon et ouais ma guele"
 cle_code = 'vroum'
 ph_code = vigenere_encode(phrase)
-print(ph_code)
-print(boom(ph_code, cle_code))
+print(vigenere_encode(phrase))
+print(boom(ph_code))
