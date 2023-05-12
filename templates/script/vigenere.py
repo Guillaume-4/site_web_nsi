@@ -29,12 +29,8 @@ tab = [['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r',
 def vigenere_encode(phrase):
     code = ""
     liste_cle, cle, l_ph, carac = [], [], [], [] 
-    for k in cle_code:
-        cle.append(k)
-    for b in phrase:
-        l_ph.append(b)     
-    print(l_ph)   
-    print(cle)
+    cle = list(cle_code)
+    l_ph = list(phrase)
     x = 0
     for i in range(len(l_ph)):
         if l_ph[i] == " ": 
@@ -60,26 +56,35 @@ def vigenere_encode(phrase):
     return code
 
 def boom(code):
+    chiffre_cle_trouver = 0
     phrase_deco = ""
     tab_fin = []
     ph_decode = []
     x = 0
     cle = list(cle_code)
     split_code = list(code)
-    for y in split_code: 
-        for j in range(len(tab)):
-            if x >= len(cle):
+    for lettre_code in range(len(split_code)):
+        for chiffre_cle in dico.items():
+            if x< len(cle):
                 x = 0
-            if tab[x][j] == y:
-                tab_fin.append(j)
-            x += 1
-    for y in split_code:
+                if chiffre_cle == cle[x]:
+                    chiffre_cle_trouver = chiffre_cle
+        
+        if x< len(cle):
+            tab_fin.append(tab[lettre_code][chiffre_cle_trouver])
+        else:
+            x = 0
+            tab_fin.append(tab[lettre_code][chiffre_cle_trouver])
+        x += 1
+    for lettre in tab_fin:
         for ele in dico.items():
-            if j == ele[1]:
+            if lettre == ele[1]:
                 ph_decode.append(ele[0])
-    for p in ph_code :
+            elif lettre ==' ':
+                ph_decode.append(" ")
+    for p in ph_decode :
         phrase_deco = phrase_deco + p
-    return phrase_deco
+    return phrase
 
 
 
