@@ -59,41 +59,27 @@ def vigenere_encode(phrase):
         code = code + g
     return code
 
-def boom(code):
-    # Convertir le texte chiffré et la clé en majuscules
-    code = code.upper()
-    cle_code = cle_code.upper()
-
-    # Créer une liste de nombres correspondant aux lettres de la clé
-    cle_code_num = [ord(i) - 65 for i in cle_code]
-
-    # Définir une chaîne de caractères vide pour stocker le texte déchiffré
-    plaintext = ""
-
-    # Parcourir chaque caractère du texte chiffré
-    for i in range(len(code)):
-        # Si le caractère est une lettre
-        if code[i].isalpha():
-            # Calculer le nombre correspondant à la lettre du texte chiffré
-            letter_num = ord(code[i]) - 65
-            # Calculer le nombre correspondant à la lettre de la clé
-            cle_code_letter_num = cle_code_num[i % len(cle_code)]
-            # Déchiffrer la lettre en ajoutant les deux nombres et en prenant le modulo 26
-            plain_letter_num = (letter_num - cle_code_letter_num) % 26
-            # Convertir le nombre en lettre majuscule et l'ajouter à la chaîne de caractères déchiffrée
-            plain_letter = chr(plain_letter_num + 65)
-            plaintext += plain_letter
-        # Si le caractère n'est pas une lettre, l'ajouter directement à la chaîne de caractères déchiffrée
-        else:
-            plaintext += code[i]
-
-    # Retourner la chaîne de caractères déchiffrée
-    return plaintext
+def boom(message_chiffre, cle):
+    message_dechiffre = ""
+    i = 0
+    for lettre in message_chiffre:
+        # Si la lettre n'est pas une lettre de l'alphabet, on la laisse inchangée
+        if lettre not in dico:
+            message_dechiffre += lettre
+            continue
+        # On décale la lettre de la clé correspondante
+        decalage = dico[cle[i % len(cle)]]
+        lettre_dechiffre = tab[dico[lettre]][decalage]
+        # On ajoute la lettre déchiffrée au message déchiffré
+        
+        message_dechiffre += lettre_dechiffre
+        i += 1
+    return message_dechiffre
 
 
 
 phrase = "test si c bon et ouais ma guele"
 cle_code = 'vroum'
 ph_code = vigenere_encode(phrase)
-print(vigenere_encode(phrase))
-print(boom(ph_code))
+print(ph_code)
+print(boom(ph_code, cle_code))
