@@ -109,6 +109,9 @@ def boom(code):
     for p in ph_decode :
         phrase_deco = phrase_deco + p
     return phrase
+<<<<<<< HEAD
+>>>>>>> 2c1d528fa2ef8fbc874f1c7acdd7aa75714dd327
+=======
 >>>>>>> 2c1d528fa2ef8fbc874f1c7acdd7aa75714dd327
 
 
