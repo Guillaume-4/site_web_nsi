@@ -22,7 +22,7 @@ def morse():
         print(phrase_a_coder)
         coder = morse_encode(phrase_a_coder)
         print(coder)
-        return render_template("/morse/morse.html") + f'<h1 class="reponse">La Phrase coder est: {coder}</h1>'
+        return render_template("/morse/morse.html") + f'<h1 class="reponse">La Phrase codée est: {coder}</h1>'
     else:
         return render_template("/morse/morse.html")
     
@@ -44,7 +44,7 @@ def cesar():
         print(phrase_a_coder)
         coder = cesar_coder(phrase_a_coder, nombre)
         print(coder)
-        return render_template("/cesar/cesar.html") + f"<h1>La Phrase coder est: {coder}</h1> "
+        return render_template("/cesar/cesar.html") + f"<h1>La Phrase codée est: {coder}</h1> "
     else:
         return render_template("/cesar/cesar.html")
 
@@ -61,7 +61,7 @@ def pigpen():
         print(phrase_a_coder)
         coder = pigpen_encode(phrase_a_coder)
         print(coder)
-        return render_template("/pigpen/pigpen.html") + f"<h1>La Phrase coder est: {coder}</h1> "
+        return render_template("/pigpen/pigpen.html") + f"<h1>La Phrase codée est: {coder}</h1> "
     else:
         return render_template("/pigpen/pigpen.html")
     
@@ -78,7 +78,7 @@ def rsa():
         print(phrase_a_coder)
         coder = cesar_coder(phrase_a_coder)
         print(coder)
-        return render_template("/rsa/rsa.html") + f"<h1>La Phrase coder est: {coder}</h1> "
+        return render_template("/rsa/rsa.html") + f"<h1>La Phrase codée est: {coder}</h1> "
     else:
         return render_template("/rsa/rsa.html")
 

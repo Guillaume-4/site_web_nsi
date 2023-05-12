@@ -52,9 +52,6 @@ button {
     position: relative;
     transition: 0.5s;
     margin: 0.8em;
-    opacity: 0;
-    visibility: hidden;
-    animation: fadeIn 3s ease-in-out forwards;
 }
 
 button::before,
@@ -125,7 +122,9 @@ header nav {
 
 body{
     color:#ffffff;
-
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 3s ease-in-out forwards;
 }
 body::before {
     content: '';
@@ -143,7 +142,6 @@ body::before {
   }
 
 .accueil{
-    position: flex;
     width: 25%;
     color: rgb(156, 156, 156);
 }
@@ -161,10 +159,6 @@ body::before {
     text-align: center;
     height: 20%;
     font-size: 1.6em;
-    margin-bottom: 5%;
-    opacity: 0;
-    visibility: hidden;
-    animation: fadeIn 3s ease-in-out forwards;
 }
 
 a {

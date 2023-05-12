@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+def vigenere_encode(message, key):
+    encoded_message = ""
+    key_index = 0
+    
+    for char in message:
+        if char.isalpha():  # Vérifie si le caractère est une lettre
+            # Convertit la lettre en majuscule pour faciliter le chiffrement
+            char = char.upper()
+            
+            # Calcule le décalage correspondant à la lettre de la clé
+            shift = ord(key[key_index].upper()) - ord('A')
+            
+            # Applique le décalage à la lettre du message
+            encoded_char = chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
+            
+            key_index = (key_index + 1) % len(key)  # Passe à la lettre suivante de la clé
+        else:
+            encoded_char = char  # Conserve les caractères non alphabétiques inchangés
+        
+        encoded_message += encoded_char
+    
+    return encoded_message
+=======
 dico =  {'a': 0,'b': 1,'c': 2,'d': 3,'e': 4,'f': 5,'g': 6,'h': 7,'i': 8,'j': 9,'k': 10,'l': 11,'m': 12,'n': 13, 'o': 14,'p': 15,'q':16,'r': 17,'s': 18,'t': 19,'u': 20,'v': 21,'w': 22,'x': 23,'y': 24,'z': 25}
 tab = [['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
        ['b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','a'],
@@ -29,12 +53,8 @@ tab = [['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r',
 def vigenere_encode(phrase):
     code = ""
     liste_cle, cle, l_ph, carac = [], [], [], [] 
-    for k in cle_code:
-        cle.append(k)
-    for b in phrase:
-        l_ph.append(b)     
-    print(l_ph)   
-    print(cle)
+    cle = list(cle_code)
+    l_ph = list(phrase)
     x = 0
     for i in range(len(l_ph)):
         if l_ph[i] == " ": 
@@ -60,31 +80,62 @@ def vigenere_encode(phrase):
     return code
 
 def boom(code):
+    chiffre_cle_trouver = 0
     phrase_deco = ""
     tab_fin = []
     ph_decode = []
     x = 0
     cle = list(cle_code)
     split_code = list(code)
-    for y in split_code: 
-        for j in range(len(tab)):
-            if x >= len(cle):
+    for lettre_code in range(len(split_code)):
+        for chiffre_cle in dico.items():
+            if x< len(cle):
                 x = 0
-            if tab[x][j] == y:
-                tab_fin.append(j)
-            x += 1
-    for y in split_code:
+                if chiffre_cle == cle[x]:
+                    chiffre_cle_trouver = chiffre_cle
+        
+        if x< len(cle):
+            tab_fin.append(tab[lettre_code][chiffre_cle_trouver])
+        else:
+            x = 0
+            tab_fin.append(tab[lettre_code][chiffre_cle_trouver])
+        x += 1
+    for lettre in tab_fin:
         for ele in dico.items():
-            if j == ele[1]:
+            if lettre == ele[1]:
                 ph_decode.append(ele[0])
-    for p in ph_code :
+            elif lettre ==' ':
+                ph_decode.append(" ")
+    for p in ph_decode :
         phrase_deco = phrase_deco + p
-    return phrase_deco
+    return phrase
+>>>>>>> 2c1d528fa2ef8fbc874f1c7acdd7aa75714dd327
 
 
+def vigenere_decode(encoded_message, key):
+    decoded_message = ""
+    key_index = 0
+    
+    for char in encoded_message:
+        if char.isalpha():
+            char = char.upper()
+            shift = ord(key[key_index].upper()) - ord('A')
+            decoded_char = chr((ord(char) - ord('A') - shift) % 26 + ord('A'))
+            key_index = (key_index + 1) % len(key)
+        else:
+            decoded_char = char
+        
+        decoded_message += decoded_char
+    
+    return decoded_message
 
-phrase = "test si c bon et ouais ma guele"
-cle_code = 'vroum'
-ph_code = vigenere_encode(phrase)
-print(vigenere_encode(phrase))
-print(boom(ph_code))
+
+# Exemple d'utilisation :
+message = "test si ' ' ' ca marche pour le francais"
+key = "l'aluminium"
+
+encoded_message = vigenere_encode(message, key)
+print("Message encodé:", encoded_message)
+
+decoded_message = vigenere_decode(encoded_message, key)
+print("Message décodé:", decoded_message)
