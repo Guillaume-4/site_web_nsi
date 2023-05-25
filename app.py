@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from templates.script.morse import morse_encode, morse_decode
 from templates.script.cesar import cesar_coder, cesar_decoder
 from templates.script.pigpen import pigpen_encode, pigpen_decode
+from templates.script.vigenere import vigenere_encode, vigenere_decode
 
 app = Flask(__name__)
 
@@ -35,9 +36,7 @@ def cesar():
     
     if phrase_a_coder == None and phrase_a_decoder != None:
         nombre = request.form.get("Nb_Code")
-        print(phrase_a_decoder)
         decoder = cesar_decoder(phrase_a_decoder, nombre)
-        print(decoder)
         return render_template("/cesar/cesar.html") + f"<h1>La Phrase décodée est: {decoder}</h1> "
     elif phrase_a_coder != None and phrase_a_decoder == None:
         nombre = request.form.get("Nb_Code")
@@ -70,17 +69,28 @@ def rsa():
     phrase_a_coder = request.form.get("a_coder")
     phrase_a_decoder = request.form.get("a_decoder")
     if phrase_a_coder == None and phrase_a_decoder != None:
-        print(phrase_a_decoder)
         decoder = cesar_decoder(phrase_a_decoder)
-        print(decoder)
-        return render_template("/rsa/rsa.html") + f"<h1>La Phrase décodée est: {decoder}</h1> "
+        return render_template("/rsa/rsa.html") + f"<h1>La Phrase décodée est: {decoder}</h1>" 
     elif phrase_a_coder != None and phrase_a_decoder == None:
-        print(phrase_a_coder)
         coder = cesar_coder(phrase_a_coder)
-        print(coder)
         return render_template("/rsa/rsa.html") + f"<h1>La Phrase codée est: {coder}</h1> "
     else:
         return render_template("/rsa/rsa.html")
+    
+@app.route('/vigenere', methods=['GET', 'POST'])
+def vigenere():
+    phrase_a_coder = request.form.get("a_coder")
+    clef_code = request.form.get("clef_code")
+    phrase_a_decoder = request.form.get("a_decoder")
+    clef_decode = request.form.get("clef_decode")
+    if phrase_a_coder == None and phrase_a_decoder != None:
+        decoder = vigenere_decode(phrase_a_decoder, clef_decode)
+        return render_template("/vigenere/vigenere.html") + f"<h1>La Phrase décodée est: {decoder}</h1>" 
+    elif phrase_a_coder != None and phrase_a_decoder == None:
+        coder = vigenere_encode(phrase_a_coder, clef_code)
+        return render_template("/vigenere/vigenere.html") + f"<h1>La Phrase codée est: {coder}</h1> "
+    else:
+        return render_template("/vigenere/vigenere.html")
 
 
 

@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="../../static/vigenere.css">
+<title>Codexia | Vigenère</title>
+<header>
+    <head>
+        <nav>
+            <button onclick=window.location.href="../" class="accueil">Accueil</button>
+            <h1 class="Titre-vigenere"><b>CODEXIA: Vigenère</b></h1>
+        </nav>
+        
+    </head>
+</header>
+
+<body>
+    <div>
+        <h1 class="texte-vigenere">Le cryptage Vigenère, développé par Blaise de Vigenère au XVIe siècle, est une méthode de chiffrement classique basée sur un tableau de correspondance appelé tableau de Vigenère. Contrairement aux chiffrements simples comme le chiffre de César, il utilise une clé secrète pour chiffrer le message, offrant ainsi une meilleure sécurité. Chaque lettre du message clair est associée à une lettre du tableau de Vigenère en utilisant la clé, permettant de créer le message chiffré. Ce qui rend le cryptage Vigenère intéressant, c'est que des lettres identiques dans le message clair peuvent être chiffrées différemment selon leur position et la lettre correspondante de la clé, compliquant ainsi la cryptanalyse sans la clé secrète. Pour décrypter, on utilise le même tableau de Vigenère et la clé pour inverser le processus et retrouver le message clair d'origine. Bien que des méthodes plus avancées existent aujourd'hui, le cryptage Vigenère reste un sujet d'étude fascinant dans le domaine de la cryptographie, ayant été utilisé pendant des siècles pour protéger les communications confidentielles</h1>
+        <form method="POST" class="coder" >
+            <div class="form_code"><label>Clef à utiliser: <input type="text" name="clef_code"></label></div> 
+            <div class="clef_code"><label>Phrase à coder: <input type="text" name="a_coder"></label></div>
+            <input type="submit" value="Coder" class="bouton_valider">
+        </form>
+
+        <form method="POST" class="decoder" >
+            <div class="form_decode"><label>Phrase à décoder: <input type="text" name="a_decoder"></label></div> 
+            <div class="clef_decode"><label>Clef à utiliser: <input type="text" name="clef_decode"></label></div>
+            <input type="submit" value="Décoder" class="bouton_décoder">
+        </form>
+        
+
+    </div>
+</body>
