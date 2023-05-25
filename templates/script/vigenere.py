@@ -38,14 +38,3 @@ def vigenere_decode(encoded_message, key):
         decoded_message += decoded_char
     
     return decoded_message
-
-
-# Exemple d'utilisation :
-message = "test si ' ' ' ca marche pour le francais"
-key = "l'aluminium"
-
-encoded_message = vigenere_encode(message, key)
-print("Message encodé:", encoded_message)
-
-decoded_message = vigenere_decode(encoded_message, key)
-print("Message décodé:", decoded_message)

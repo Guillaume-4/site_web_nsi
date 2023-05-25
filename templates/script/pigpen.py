@@ -13,6 +13,7 @@ def pigpen_encode(phrase):
                 carac.append(ele[1])
     for j  in carac:
         code = code + j + "/"
+    print(code)
     return code
 
 def pigpen_decode(code):

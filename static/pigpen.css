@@ -140,7 +140,12 @@ body::before {
     opacity: 0.8;
     z-index: -1;
   }
-
+img {
+    position: absolute;
+    display: block;
+    margin:auto;
+    margin-left: 70%;
+}
 .accueil{
     width: 25%;
     color: rgb(156, 156, 156);
@@ -149,7 +154,7 @@ body::before {
 .reponse{
     position: absolute;
     left: 10%;
-    margin-top: -265px;
+    margin-top: -250px;
     height: 10px;
     font-size: 1.3em;
 }
